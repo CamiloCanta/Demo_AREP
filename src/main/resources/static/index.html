@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torax Scanner</title>
+    <style>
+        body {
+            background-color: #b3d9ff; /* Fondo azul claro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 42px; /* Tamaño de fuente más grande */
+            margin-bottom: 10px;
+        }
+
+        #upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            cursor: pointer;
+        }
+
+        #success-message {
+            color: green;
+            font-size: 18px;
+            display: none;
+        }
+
+        #small-image {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>Torax Scanner</h1>
+    <img src="icon.png" alt="Imagen pequeña" id="small-image">
+    <form id="upload-form">
+        <input type="file" name="file" accept=".pdf, .jpg, .jpeg, .png" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="success-message">Enviado exitosamente</p>
+</div>
+
+<script>
+    document.getElementById('upload-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Simular el envío exitoso durante 10 segundos
+        document.getElementById('success-message').style.display = 'block';
+        setTimeout(function () {
+            document.getElementById('success-message').style.display = 'none';
+        }, 10000);
+    });
+</script>
+</body>
+</html>
